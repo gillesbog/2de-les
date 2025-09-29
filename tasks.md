@@ -4,3 +4,4 @@
 - LEHO toets 2
 - cheatsheet maken
 - nieuwe commando's uittesten
+- interview
