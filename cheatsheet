@@ -1,0 +1,7 @@
+# commands
+## Local repo
+- git init
+- git status
+- git add filename
+- git commit -m "message"
+- git log
