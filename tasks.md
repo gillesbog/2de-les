@@ -5,3 +5,4 @@
 - cheatsheet maken
 - nieuwe commando's uittesten
 - interview
+- cool
