@@ -152,3 +152,129 @@ Opent een bestand of map in **Visual Studio Code** (als dit correct is ingesteld
 code cheatsheet.md
 ```
 
+
+````markdown
+# Git Workflow Cheatsheet 🚀
+
+Dit overzicht beschrijft een standaard Git-workflow, van een lokaal project tot samenwerken via GitHub.
+
+---
+
+## 🏛️ Lokale Repository & Basis Commando's
+
+Alles begint op je eigen computer.
+
+- **Nieuwe repository starten**
+  ```bash
+  # Maakt een nieuwe Git repository aan in de huidige map
+  git init
+````
+
+  - **Wijzigingen opslaan (Commit)**
+
+    ```bash
+    # 1. Voeg bestanden toe aan de 'staging area' (klaarzetten voor commit)
+    git add <bestandsnaam>
+    # of voeg alle gewijzigde bestanden toe
+    git add .
+
+    # 2. Sla de klaargezette bestanden op met een beschrijvend bericht
+    git commit -m "Dit is wat ik heb veranderd"
+    ```
+
+  - **Status bekijken**
+
+    ```bash
+    # Controleer de status van je bestanden en branch
+    git status
+    ```
+
+-----
+
+## 🌿 Werken met Branches
+
+Branches zijn aparte tijdlijnen waar je nieuwe features kunt ontwikkelen zonder de hoofdlijn (`main`) te beïnvloeden.
+
+  - **Aanmaken en wisselen**
+
+    ```bash
+    # Maak een nieuwe branch aan
+    git branch <nieuwe-branch-naam>
+
+    # Wissel naar een andere branch
+    git checkout <branch-naam>
+
+    # Maak én wissel naar een nieuwe branch in één commando
+    git checkout -b <nieuwe-branch-naam>
+    ```
+
+  - **Samenvoegen (Mergen)**
+    Nadat je werk op een feature branch af is, voeg je het samen met `main`.
+
+    ```bash
+    # 1. Ga terug naar de hoofdbranch
+    git checkout main
+
+    # 2. Voeg de wijzigingen van de feature branch samen in main
+    git merge <feature-branch-naam>
+    ```
+
+  - **Soorten Merges**
+
+      - **Fast-Forward**: Simpele merge waarbij `main` "doorspoelt" naar de nieuwste commit van je feature branch. Gebeurt als `main` zelf niet is veranderd.
+      - **Merge Commit**: Als beide branches unieke commits hebben, maakt Git een nieuwe commit aan die de twee geschiedenissen samenbrengt.
+
+-----
+
+## ☁️ Samenwerken met een Remote Repository (GitHub)
+
+Om je code te back-uppen, te delen of om samen te werken, koppel je je lokale repository aan een remote.
+
+  - **Verbinding leggen**
+
+    ```bash
+    # Koppel je lokale repo aan een remote URL (meestal van GitHub)
+    # 'origin' is de standaardnaam voor deze verbinding.
+    git remote add origin [https://github.com/gebruiker/repo.git](https://github.com/gebruiker/repo.git)
+    ```
+
+  - **Wijzigingen synchroniseren**
+
+      - **Push**: Lokale commits naar de remote **sturen**.
+        ```bash
+        # Stuur commits van je huidige lokale branch naar de remote 'origin'
+        git push
+
+        # De allereerste keer dat je een nieuwe branch pusht:
+        git push --set-upstream origin <branch-naam>
+        ```
+      - **Pull**: Wijzigingen van de remote **ophalen** en mergen.
+        ```bash
+        # Update je lokale branch met de laatste versie van de remote
+        git pull
+        ```
+
+-----
+
+## 🧹 Branches Opruimen
+
+Houd je repository overzichtelijk door afgewerkte branches te verwijderen.
+
+  - **Lokale branch verwijderen**
+    ```bash
+    # Verwijder een branch die al volledig is samengevoegd
+    git branch -d <branch-naam>
+
+    # Forceer de verwijdering van een branch (ook als hij niet gemerged is)
+    git branch -D <branch-naam>
+    ```
+  - **Remote branch verwijderen**
+    ```bash
+    # Verwijder een branch van de remote 'origin'
+    git push origin --delete <branch-naam>
+    ```
+
+<!-- end list -->
+
+```
+```
